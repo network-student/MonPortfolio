@@ -1,3 +1,8 @@
+```css
+/* =========================
+   RESET
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -13,9 +18,12 @@ body {
     background: #f4f7fb;
     color: #1f2937;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header {
     background: #0f172a;
@@ -42,13 +50,16 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 nav a:hover {
     color: #38bdf8;
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 
 section {
     padding: 80px 8%;
@@ -61,7 +72,9 @@ section h2 {
     color: #0f172a;
 }
 
-/* ACCUEIL */
+/* =========================
+   ACCUEIL
+========================= */
 
 #accueil {
     min-height: 90vh;
@@ -74,30 +87,54 @@ section h2 {
 #accueil h2 {
     font-size: 48px;
     max-width: 700px;
+    line-height: 1.2;
 }
 
 #accueil p {
     font-size: 20px;
     max-width: 650px;
-    margin-bottom: 30px;
+    margin: 20px 0 10px;
 }
 
-button {
-    width: fit-content;
-    padding: 13px 25px;
-    border: none;
+/* =========================
+   BOUTONS
+========================= */
+
+.boutons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.boutons a {
+    display: inline-block;
+    padding: 12px 22px;
+    text-decoration: none;
     border-radius: 6px;
-    background: #0284c7;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.boutons a:first-child {
+    background-color: #0077b6;
     color: white;
-    font-size: 16px;
-    cursor: pointer;
 }
 
-button:hover {
-    background: #0369a1;
+.boutons a:last-child {
+    background-color: transparent;
+    color: #0077b6;
+    border: 2px solid #0077b6;
 }
 
-/* COMPÉTENCES */
+.boutons a:hover {
+    transform: translateY(-2px);
+    opacity: 0.85;
+}
+
+/* =========================
+   COMPÉTENCES
+========================= */
 
 #competences ul {
     list-style: none;
@@ -111,17 +148,24 @@ button:hover {
     background: white;
     padding: 18px;
     border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
 }
 
-/* PROJETS */
+#competences li:hover {
+    transform: translateY(-3px);
+}
+
+/* =========================
+   PROJETS
+========================= */
 
 article {
     background: white;
     padding: 25px;
     margin-bottom: 20px;
     border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
     max-width: 800px;
 }
 
@@ -130,7 +174,17 @@ article h3 {
     color: #0284c7;
 }
 
-/* FOOTER */
+/* =========================
+   CONTACT
+========================= */
+
+#contact p {
+    word-break: break-word;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     background: #0f172a;
@@ -139,26 +193,447 @@ footer {
     padding: 25px;
 }
 
-/* MOBILE */
+/* =========================
+   TABLETTE
+========================= */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 20px 5%;
+    }
+
+    section {
+        padding: 70px 5%;
+    }
+
+    #accueil h2 {
+        font-size: 42px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 700px) {
+
+    /* HEADER */
 
     header {
         flex-direction: column;
         gap: 15px;
+        text-align: center;
+        padding: 18px 5%;
+    }
+
+    header h1 {
+        font-size: 21px;
     }
 
     nav {
-        gap: 12px;
+        width: 100%;
+        display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 15px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    /* SECTIONS */
+
+    section {
+        padding: 55px 6%;
+        min-height: auto;
+    }
+
+    section h2 {
+        font-size: 28px;
+    }
+
+    /* ACCUEIL */
+
+    #accueil {
+        min-height: calc(100vh - 100px);
         justify-content: center;
     }
 
     #accueil h2 {
-        font-size: 36px;
+        font-size: 34px;
+        max-width: 100%;
     }
+
+    #accueil p {
+        font-size: 17px;
+        margin-top: 18px;
+    }
+
+    /* BOUTONS */
+
+    .boutons {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .boutons a {
+        width: 100%;
+        text-align: center;
+        padding: 13px 15px;
+    }
+
+    /* COMPÉTENCES */
 
     #competences ul {
         grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    #competences li {
+        width: 100%;
+    }
+
+    /* PROJETS */
+
+    article {
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* CONTACT */
+
+    #contact p {
+        font-size: 15px;
     }
 }
+
+/* =========================
+   PETITS TÉLÉPHONES
+========================= */
+
+@media (max-width: 400px) {
+
+    header h1 {
+        font-size: 19px;
+    }
+
+    nav {
+        gap: 8px 12px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    #accueil h2 {
+        font-size: 29px;
+    }
+
+    #accueil p {
+        font-size: 16px;
+    }
+
+    section h2 {
+        font-size: 25px;
+    }
+
+    section {
+        padding: 45px 5%;
+    }
+}
+```
+```css
+/* =========================
+   ACCUEIL PROFESSIONNEL
+========================= */
+
+.accueil-contenu {
+    max-width: 850px;
+}
+
+.salutation {
+    color: #0284c7;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+#accueil .description {
+    font-size: 21px;
+    font-weight: bold;
+    margin: 20px 0 10px;
+}
+
+#accueil .objectif {
+    font-size: 17px;
+    max-width: 650px;
+    color: #475569;
+    margin-bottom: 25px;
+}
+
+/* Animation légère */
+
+.accueil-contenu {
+    animation: apparition 0.8s ease;
+}
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .salutation {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+
+    #accueil .description {
+        font-size: 18px;
+    }
+
+    #accueil .objectif {
+        font-size: 16px;
+    }
+}
+```
+```css id="f2e4qz"
+/* =========================
+   CARTES COMPÉTENCES
+========================= */
+
+.competences-cartes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+}
+
+.competence {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.competence h3 {
+    color: #0284c7;
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+.competence p {
+    color: #475569;
+    font-size: 15px;
+}
+
+.competence:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* TABLETTE */
+
+@media (max-width: 900px) {
+
+    .competences-cartes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* TÉLÉPHONE */
+
+@media (max-width: 600px) {
+
+    .competences-cartes {
+        grid-template-columns: 1fr;
+    }
+
+    .competence {
+        padding: 20px;
+    }
+}
+```
+```css id="z2r8mk"
+/* =========================
+   PROJETS
+========================= */
+
+.projets-cartes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+}
+
+.projets-cartes article {
+    max-width: none;
+    margin: 0;
+    padding: 28px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.projets-cartes article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.projets-cartes h3 {
+    color: #0284c7;
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.projets-cartes p {
+    margin-bottom: 18px;
+    color: #475569;
+}
+
+.projets-cartes span {
+    display: inline-block;
+    background: #e0f2fe;
+    color: #0369a1;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* TABLETTE */
+
+@media (max-width: 800px) {
+
+    .projets-cartes {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* TÉLÉPHONE */
+
+@media (max-width: 600px) {
+
+    .projets-cartes article {
+        padding: 22px;
+    }
+
+    .projets-cartes h3 {
+        font-size: 18px;
+    }
+
+    .projets-cartes p {
+        font-size: 15px;
+    }
+}
+```
+```css
+/* =========================
+   CONTACT
+========================= */
+
+.contact-contenu {
+    max-width: 700px;
+}
+
+.contact-contenu > p {
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+.contact-liens {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.contact-liens a {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #0284c7;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contact-liens a:hover {
+    background: #0369a1;
+    transform: translateY(-2px);
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .contact-liens {
+        flex-direction: column;
+    }
+
+    .contact-liens a {
+        width: 100%;
+        text-align: center;
+    }
+}
+```
+
+### 3. ⚠️ Important pour GitHub
+
+Pour l'instant j'ai mis :
+
+```html
+https://github.com/
+```
+
+Quand tu connais **ton vrai nom d'utilisateur GitHub**, remplace-le par :
+
+```html
+https://github.com/TON_USERNAME
+```
+
+Par exemple :
+
+```html
+<a href="https://github.com/Benjamin123" target="_blank">
+    💻 GitHub
+</a>
+```
+
+Ne mets pas `Benjamin123` si ce n'est pas réellement ton identifiant.
+
+### 4. Test
+
+Fais :
+
+**Ctrl + S → F5**
+
+Puis clique sur **Email** : ton application mail devrait s'ouvrir.
+
+Ensuite, vérifie les boutons :
+
+* Accueil ✅
+* À propos ✅
+* Compétences ✅
+* Projets ✅
+* Contact ✅
+* Email ✅
+* GitHub ✅
+
+Après cette vérification, **on passe directement à la mise en ligne gratuite avec GitHub Pages**.
